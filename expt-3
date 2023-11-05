@@ -1,19 +1,22 @@
-import cmath as m 
-n = 4 #For urban areas(path loss exponent) 
-N = 7 #No. of cells in a cluster 
-Q = (3*N)**(1/2) #co-channel reuse ratio 
-print("Case I: For Omnidirectional cell:") 
-S1 = 1/((2*(Q+1)*(-n)) + (2*Q(-n)) + (2(Q-1)**(-n))) # S/I ratio For Omnidirectional cell 
-s1 = 10*m.log(S1,10) #Value of S/I ratio in db 
-print("For Omnidirectional cell, Value of S/I ratio is ",S1.real," and ",s1.real, "db.") 
-print("Case II: For 3-sectoring cell:") 
-S2 = 1/(((Q+0.7)*(-n)) +(Q*(-n))) # S/I ratio For 3-sectoring cell 
-s2 = 10*m.log(S2,10) #Value of S/I ratio in db 
-print("For 3-sectoring cell, Value of S/I ratio is ",S2.real," and ",s2.real, "db.") 
-print("Case III: For 6-sectoring cell:") 
-S3 = 1/((Q+0.7)**(-n)) # S/I ratio For 6-sectoring cell 
-s3 = 10*m.log(S3,10) #Value of S/I ratio in db 
-print("For 3-sectoring cell, Value of S/I ratio is ",S3.real," and ",s3.real, "db.") 
-print("On comparing S/I ratio for the three cases, we conclude that:") 
-if s3.real >s2.real and s2.real > s1.real: 
-print("S/I ratio increases with cell sectoring.")
+#mcs expt 3
+import cmath as m
+n=4 #for urban areas
+N=7
+Q=(3*N)**(1/2)
+print("For Omnidirectional cell:")
+S1 = 1/((2*(Q+1)**(-n))+(2*Q**(-n))+(2*(Q-1)**(-n)))
+s1=10*m.log(S1,10)
+print("The value S/I ratio for Omnidirectional cell is ",s1.real," db.")
+
+print("For 3-sector cell:")
+S2 = 1/(((Q+0.7)**(-n))+(Q**(-n)))
+s2=10*m.log(S2,10)
+print("The value S/I ratio for 3-sector cell is ",s2.real," db.")
+
+print("For 6-sector cell:")
+S3 = 1/((Q+0.7)**(-n))
+s3=10*m.log(S3,10)
+print("The value S/I ratio for 6-sector cell is ",s3.real," db.")
+
+if s1.real> s2.real and s2.real > s3.real:
+    print("Cell sectoring increases as S/I ratio decreases.")
