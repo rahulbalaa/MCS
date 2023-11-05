@@ -1,28 +1,18 @@
-#mcs expt 1
-S = int(input("No. of available channels(S): "))
-X = int(input("X: "))
-
-#For a large number of clusters
-print("For a large number of clusters")
-N1 = int(input("No. of cells in a cluster(N): "))
-K1 = S/N1
-print("No. of channels per cell is ",K1)
-M1 = X/N1
-print("No. of clusters is ",M1)
-C1 = M1*S
-print("Capacity of the cellular system for the first case is ", C1)
-
-#For a small number of clusters
-print("For a small number of clusters")
-N2 = int(input("No. of cells in a cluster(N): "))
-K2 = S/N2
-print("No. of channels per cell is ",K2)
-M2 = X/N2
-print("No. of clusters is ",M2)
-C2 = M2*S
-print("Capacity of the cellular system for the second case is ", C2)
-
-if C2>C1:
-    print("Capacity of cellular system increases with decreases in cluster size.")
+x = int(input('Enter the total number of cells in a cluster:- '))
+def cluster_Size(x,i):
+ print('Case ',i)
+ N = int(input('Enter the cluster size:-'))
+ S = int(input('Enter the cluster capacity:-'))
+ K = S/N
+ print('Number of channel per ', N, ' cells is : ', K)
+ M = x/N
+ print('Number of cluster: ',M)
+ C = M*K*N
+ print('Channel capacity: ', C, '\n')
+ return C
+c1 = cluster_Size(x, 1)
+c2 = cluster_Size(x, 2)
+if c1 > c2:
+ print('Capacity of cellular system increases with decrease in cluster size')
 else:
-    print("Capacity of cellular system decreases with increases in cluster size.")
+ print('Capacity of cellular system decrease with increases in cluster size')
