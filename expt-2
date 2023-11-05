@@ -5,24 +5,20 @@ n=3
 Q = (3*N)**(1/2)
 S1 = Q/6
 s1 = 10*m.log(S1,10)
-print("When the co-channel are equidistant from the central cell, the signal to co-channel interference ratio is 
-",s1.real,"db.")
+print("When the co-channel are equidistant from the central cell, the signal to co-channel interference ratio is ",s1.real,"db.")
 S2 = 1/((2*(Q+1)*(-n))+(2(Q)*(-n))+(2(Q-1)**(-n)))
 s2 = 10*m.log(S2,10)
-print("When the co-channel are not equidistant from the central cell, the signal to co-channel interference ratio is 
-",s2.real,"db.")
+print("When the co-channel are not equidistant from the central cell, the signal to co-channel interference ratio is ",s2.real,"db.")
 print("CASE 2: For a large value of N") 
 N = int(input("Enter the value of N:")) 
 n=3
 Q = (3*N)**(1/2)
 S3 = Q/6
 s3 = 10*m.log(S3,10)
-print("When the co-channel are equidistant from the central cell, the signal to co-channel interference ratio is 
-",s3.real,"db.")
+print("When the co-channel are equidistant from the central cell, the signal to co-channel interference ratio is ",s3.real,"db.")
 S4 = 1/((2*(Q+1)*(-n))+(2(Q)*(-n))+(2(Q-1)**(-n)))
 s4 = 10*m.log(S4,10)
-print("When the co-channel are not equidistant from the central cell, the signal to co-channel interference ratio is 
-",s4.real,"db.")
+print("When the co-channel are not equidistant from the central cell, the signal to co-channel interference ratio is ",s4.real,"db.")
 print("On comparing the two cases:")
 if s1.real < s3.real and s2.real < s4.real:
 print("S/I for Omnidirectional cell increases with increase in cluster size.") 
