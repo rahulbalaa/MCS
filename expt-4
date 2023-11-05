@@ -1,20 +1,27 @@
-#MCS EXPT 4 
-import numpy as np 
-print("The Polynomial is:") 
-a = np.zeros((15, 4), dtype=int) 
-for i in range(4): 
- a[i, :] = int(input()) 
-for i in range(4, 15): 
- a[i, 0] = a[i-1, 2] ^ a[i-1, 3] 
- a[i, 1:] = a[i-1, :-1] 
-print("The Stable Table is:") 
-print(a) 
-y = a[:, 3] 
-print("PN Sequence is:") 
-print(y) 
-b = np.count_nonzero(a[:, 3] == 1) 
-c = np.count_nonzero(a[:, 3] == 0)
-print("The Number of Ones:") 
-print(b) 
-print("The Number of Zeroes:") 
+#mcs expt 4
+import numpy as np
+
+print("The polynomial is: ")
+a = np.zeros((15,4), dtype=int)
+
+for i in range(4):
+    a[i,:] = int(input())
+
+for i in range(4,15):
+    a[i,0] = a[i-1,2]^a[i-1,3]
+    a[i,1:] = a[i-1,:-1]
+
+print("the state table is: ")
+print(a)
+
+y=a[:,3]
+print("the pn sequence is ")
+print(y)
+
+b = np.count_nonzero(a[:,3]==1)
+print("The number of ones is ")
+print(b)
+
+c = np.count_nonzero(a[:,3]==0)
+print("The number of ones is ")
 print(c)
